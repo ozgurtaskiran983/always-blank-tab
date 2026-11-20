@@ -7,6 +7,8 @@ Works in Brave, Chrome, Edge and other Chromium-based browsers (Manifest V3).
 
 [Türkçe açıklama aşağıda ↓](#türkçe)
 
+<p align="center"><img src="docs/how-it-works.svg" alt="How it works: a blank tab waits on the right; you type a search into it; a new blank tab appears next to it" width="760"></p>
+
 ## How it works
 
 - If the rightmost tab is not an empty New Tab, the extension adds one in the background (it does not steal focus).
@@ -14,6 +16,8 @@ Works in Brave, Chrome, Edge and other Chromium-based browsers (Manifest V3).
 - If you already have an unused blank tab elsewhere (e.g. from `Ctrl+T`), it is moved to the end instead of creating another one, so blank tabs don't pile up.
 - Links opened from a page land to the left of the blank tab.
 - While you are dragging a tab, the extension waits and retries after you drop it.
+
+<p align="center"><img src="docs/no-pile-up.svg" alt="Blank tabs never pile up: after Ctrl+T and a search, the existing blank tab is moved to the end; links open to its left" width="760"></p>
 
 ## Install
 
@@ -45,6 +49,14 @@ Only `tabs` — needed to see which tab is a blank New Tab. No data is collected
 | 10 | Pin a tab | Pinned tab goes left, blank tab stays right |
 | 11 | Restart the browser with session restore | Exactly one blank tab on the right |
 
+## Illustrations
+
+The images in `docs/` are generated with code. To change and rebuild them:
+
+```bash
+python3 docs/make_images.py
+```
+
 ## License
 
 [MIT](LICENSE)
@@ -65,6 +77,8 @@ Brave, Chrome, Edge ve diğer Chromium tabanlı tarayıcılarda çalışır.
 - Başka bir yerde kullanılmayan boş sekme varsa (ör. `Ctrl+T` ile açılmış), yenisini açmak yerine onu sona taşır; boş sekmeler birikmez.
 - Sayfalardan açılan linkler boş sekmenin soluna açılır.
 - Sekme sürüklerken araya girmez, bıraktıktan sonra tekrar dener.
+
+Görsel anlatım için yukarıdaki iki şemaya bakabilirsin: [nasıl çalışır](docs/how-it-works.svg) ve [boş sekmeler neden birikmez](docs/no-pile-up.svg). Şemalar `docs/make_images.py` ile koddan üretilir.
 
 ### Kurulum
 
